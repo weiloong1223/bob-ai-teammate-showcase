@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch Bob, your AI teammate, handle a complete project from idea to production in 27 minutes. Interactive showcase of AI-powered software development.">
+    <meta name="keywords" content="AI, coding assistant, software development, automation, Bob, AI teammate">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bob: Your AI Teammate - Interactive Showcase">
+    <meta property="og:description" content="Watch an AI teammate handle a complete project from idea to production in 27 minutes">
+    <meta property="og:image" content="assets/images/og-image.png">
+    
+    <title>🤖 Bob: Your AI Teammate - Interactive Showcase</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+    <!-- Landing Section -->
+    <section id="landing" class="landing-section active">
+        <div class="container">
+            <!-- Bob Avatar -->
+            <div class="bob-avatar">
+                <div class="robot-head">
+                    <div class="robot-antenna"></div>
+                    <div class="robot-eyes">
+                        <div class="eye left">
+                            <div class="pupil"></div>
+                        </div>
+                        <div class="eye right">
+                            <div class="pupil"></div>
+                        </div>
+                    </div>
+                    <div class="robot-mouth"></div>
+                </div>
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="main-title">
+                <span class="emoji">🤖</span>
+                Bob: Your AI Teammate
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="subtitle">
+                From Idea to Production: Watch an AI Teammate in Action
+            </p>
+            
+            <!-- Value Proposition -->
+            <div class="value-prop">
+                <div class="value-item">
+                    <span class="value-icon">⏱️</span>
+                    <span class="value-text">27 minutes</span>
+                    <span class="value-label">Total Time</span>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">👤</span>
+                    <span class="value-text">9+ hours</span>
+                    <span class="value-label">Time Saved</span>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">📈</span>
+                    <span class="value-text">21.2x</span>
+                    <span class="value-label">Faster</span>
+                </div>
+            </div>
+            
+            <!-- Scenario Selector -->
+            <div class="scenario-selector">
+                <label for="scenario-select">Choose a Scenario:</label>
+                <select id="scenario-select" class="scenario-dropdown">
+                    <option value="github-integration" selected>Add GitHub Integration (27 min)</option>
+                    <option value="bug-fix" disabled>Fix Production Bug (15 min) - Coming Soon</option>
+                    <option value="refactor" disabled>Refactor Legacy Code (25 min) - Coming Soon</option>
+                    <option value="security-audit" disabled>Security Audit (20 min) - Coming Soon</option>
+                    <option value="project-setup" disabled>Complete Project Setup (45 min) - Coming Soon</option>
+                </select>
+            </div>
+            
+            <!-- CTA Button -->
+            <button id="start-demo-btn" class="cta-button">
+                <span class="btn-icon">🚀</span>
+                <span class="btn-text">Start Demo</span>
+            </button>
+            
+            <!-- Info Text -->
+            <p class="info-text">
+                Watch Bob handle planning, research, coding, review, testing, deployment, and documentation
+            </p>
+        </div>
+    </section>
+    
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <!-- Header -->
+        <header class="demo-header">
+            <div class="header-left">
+                <h2 class="scenario-title">Add GitHub Integration</h2>
+                <div class="phase-indicator">
+                    <span class="current-phase-icon">🎯</span>
+                    <span class="current-phase-name">Planning</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="playback-controls">
+                    <button id="play-pause-btn" class="control-btn" title="Play/Pause">
+                        <span class="play-icon">▶️</span>
+                    </button>
+                    <button id="restart-btn" class="control-btn" title="Restart">
+                        <span class="restart-icon">🔄</span>
+                    </button>
+                    <div class="speed-control">
+                        <label for="speed-select">Speed:</label>
+                        <select id="speed-select">
+                            <option value="0.5">0.5x</option>
+                            <option value="1" selected>1x</option>
+                            <option value="2">2x</option>
+                            <option value="5">5x</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="exit-demo-btn" class="exit-btn" title="Exit Demo">
+                    <span>✕</span>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progress-time">0:00</span>
+                <span class="progress-separator">/</span>
+                <span id="progress-total">27:00</span>
+            </div>
+        </div>
+        
+        <!-- Phase Navigation -->
+        <div class="phase-navigation">
+            <div class="phase-nav-item active" data-phase="planning">
+                <div class="phase-nav-icon">🎯</div>
+                <div class="phase-nav-name">Planning</div>
+                <div class="phase-nav-time">2 min</div>
+            </div>
+            <div class="phase-connector"></div>
+            <div class="phase-nav-item" data-phase="research">
+                <div class="phase-nav-icon">🔍</div>
+                <div class="phase-nav-name">Research</div>
+                <div class="phase-nav-time">3 min</div>
+            </div>
+            <div class="phase-connector"></div>
+            <div class="phase-nav-item" data-phase="coding">
+                <div class="phase-nav-icon">💻</div>
+                <div class="phase-nav-name">Coding</div>
+                <div class="phase-nav-time">8 min</div>
+            </div>
+            <div class="phase-connector"></div>
+            <div class="phase-nav-item" data-phase="review">
+                <div class="phase-nav-icon">🔍</div>
+                <div class="phase-nav-name">Review</div>
+                <div class="phase-nav-time">4 min</div>
+            </div>
+            <div class="phase-connector"></div>
+            <div class="phase-nav-item" data-phase="testing">
+                <div class="phase-nav-icon">🧪</div>
+                <div class="phase-nav-name">Testing</div>
+                <div class="phase-nav-time">5 min</div>
+            </div>
+            <div class="phase-connector"></div>
+            <div class="phase-nav-item" data-phase="deployment">
+                <div class="phase-nav-icon">🚀</div>
+                <div class="phase-nav-name">Deploy</div>
+                <div class="phase-nav-time">3 min</div>
+            </div>
+            <div class="phase-connector"></div>
+            <div class="phase-nav-item" data-phase="documentation">
+                <div class="phase-nav-icon">📚</div>
+                <div class="phase-nav-name">Docs</div>
+                <div class="phase-nav-time">2 min</div>
+            </div>
+        </div>
+        
+        <!-- Split Screen Content -->
+        <div class="split-screen">
+            <!-- Left Panel: Bob's Thinking -->
+            <div class="panel left-panel">
+                <div class="panel-header">
+                    <h3>Bob's Thinking</h3>
+                </div>
+                <div class="panel-content">
+                    <!-- Current Mode -->
+                    <div class="mode-indicator">
+                        <span class="mode-label">Current Mode:</span>
+                        <span class="mode-value">
+                            <span class="mode-icon">🎯</span>
+                            <span class="mode-name">Plan Mode</span>
+                        </span>
+                    </div>
+                    
+                    <!-- Bob's Reasoning -->
+                    <div class="reasoning-display">
+                        <h4>Bob is thinking:</h4>
+                        <div id="reasoning-content" class="reasoning-content">
+                            <p class="thinking-text">Analyzing requirements...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools Used -->
+                    <div class="tools-tracker">
+                        <h4>Tools Used:</h4>
+                        <div id="tools-list" class="tools-list">
+                            <!-- Tools will be added dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Next Steps -->
+                    <div class="next-steps">
+                        <h4>Next Steps:</h4>
+                        <ol id="next-steps-list" class="next-steps-list">
+                            <li>Understand current codebase</li>
+                            <li>Research GitHub API</li>
+                            <li>Design the feature</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel: Bob's Actions -->
+            <div class="panel right-panel">
+                <div class="panel-header">
+                    <h3>Bob's Actions</h3>
+                </div>
+                <div class="panel-content">
+                    <!-- Code Editor -->
+                    <div class="code-editor-container">
+                        <div class="editor-header">
+                            <span class="editor-filename" id="editor-filename">implementation-plan.md</span>
+                            <span class="editor-status">
+                                <span class="status-dot"></span>
+                                <span id="editor-status-text">Writing...</span>
+                            </span>
+                        </div>
+                        <div class="code-editor" id="code-editor">
+                            <pre><code id="code-content" class="language-markdown"># Implementation Plan
+
+## Overview
+Adding GitHub issue tracking integration to the dashboard...
+</code></pre>
+                        </div>
+                        <div class="editor-footer">
+                            <span class="editor-info">
+                                Lines: <span id="lines-count">1</span>/<span id="total-lines">847</span>
+                            </span>
+                            <span class="editor-progress">
+                                Progress: <span id="code-progress">0</span>%
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Terminal Output -->
+                    <div class="terminal-container">
+                        <div class="terminal-header">
+                            <span class="terminal-title">Terminal</span>
+                            <div class="terminal-controls">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                            </div>
+                        </div>
+                        <div class="terminal-content" id="terminal-content">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command">bob start planning</span>
+                            </div>
+                            <div class="terminal-output">
+                                <span class="terminal-success">✓</span> Planning phase initiated
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Metrics Dashboard -->
+        <div class="metrics-dashboard">
+            <h3 class="metrics-title">Bob's Impact (This Session)</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-value" id="metric-time-elapsed">0</div>
+                    <div class="metric-label">Minutes Elapsed</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">👤</div>
+                    <div class="metric-value" id="metric-time-saved">0</div>
+                    <div class="metric-label">Hours Saved</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-value" id="metric-efficiency">0x</div>
+                    <div class="metric-label">Faster</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🔧</div>
+                    <div class="metric-value" id="metric-tools">0</div>
+                    <div class="metric-label">Tools Used</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🔄</div>
+                    <div class="metric-value" id="metric-modes">0</div>
+                    <div class="metric-label">Mode Switches</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">📝</div>
+                    <div class="metric-value" id="metric-files">0</div>
+                    <div class="metric-label">Files Modified</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">➕</div>
+                    <div class="metric-value" id="metric-lines">0</div>
+                    <div class="metric-label">Lines Added</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">✅</div>
+                    <div class="metric-value" id="metric-tests">0</div>
+                    <div class="metric-label">Tests Created</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Completion Section -->
+    <section id="completion" class="completion-section">
+        <div class="container">
+            <div class="completion-content">
+                <div class="completion-icon">🎉</div>
+                <h2 class="completion-title">Demo Complete!</h2>
+                <p class="completion-subtitle">Bob successfully completed the GitHub Integration</p>
+                
+                <!-- Final Metrics -->
+                <div class="final-metrics">
+                    <div class="final-metric">
+                        <span class="final-metric-label">Total Time:</span>
+                        <span class="final-metric-value">27 minutes</span>
+                    </div>
+                    <div class="final-metric">
+                        <span class="final-metric-label">Time Saved:</span>
+                        <span class="final-metric-value">9 hours 33 minutes</span>
+                    </div>
+                    <div class="final-metric">
+                        <span class="final-metric-label">Efficiency Gain:</span>
+                        <span class="final-metric-value">21.2x faster</span>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="completion-actions">
+                    <button id="replay-btn" class="action-btn primary">
+                        <span>🔄</span> Watch Again
+                    </button>
+                    <button id="share-linkedin-btn" class="action-btn secondary">
+                        <span>📱</span> Share on LinkedIn
+                    </button>
+                    <button id="view-code-btn" class="action-btn secondary">
+                        <span>💻</span> View on GitHub
+                    </button>
+                </div>
+                
+                <!-- Share Message -->
+                <div class="share-message">
+                    <h3>Share Your Experience</h3>
+                    <textarea id="share-text" class="share-textarea" readonly>
+I just watched Bob (an AI teammate) build a complete GitHub integration in 27 minutes! 🤖
+
+✅ Planned the architecture
+✅ Researched best practices
+✅ Wrote 847 lines of code
+✅ Generated 36 tests
+✅ Deployed with CI/CD
+✅ Created full documentation
+
+Time saved: 9+ hours
+Efficiency: 21.2x faster
+
+This is the future of software development!
+
+Try it yourself: [Your Link]
+
+#AI #SoftwareDevelopment #Innovation #Automation
+                    </textarea>
+                    <button id="copy-share-btn" class="copy-btn">
+                        <span>📋</span> Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                Built with 🤖 and ❤️ to showcase the future of AI-assisted development
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername/bob-ai-teammate-showcase" target="_blank" rel="noopener">GitHub</a>
+                <span class="separator">•</span>
+                <a href="docs/LINKEDIN_GUIDE.md">LinkedIn Guide</a>
+                <span class="separator">•</span>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">Connect</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/utils.js"></script>
+    <script src="js/state-manager.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/ui-components.js"></script>
+    <script src="js/phase-controller.js"></script>
+    <script src="js/scenario-engine.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

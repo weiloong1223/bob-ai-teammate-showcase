@@ -1,0 +1,710 @@
+/* ============================================
+   Bob: Your AI Teammate - Responsive Styles
+   ============================================ */
+
+/* ============================================
+   Large Desktops (1400px and up)
+   ============================================ */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .main-title {
+        font-size: 4rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/* ============================================
+   Desktops (1200px to 1399px)
+   ============================================ */
+@media (max-width: 1399px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ============================================
+   Tablets (768px to 1199px)
+   ============================================ */
+@media (max-width: 1199px) {
+    /* Typography */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.25rem;
+    }
+    
+    /* Landing Section */
+    .value-prop {
+        gap: var(--spacing-md);
+    }
+    
+    .value-item {
+        min-width: 120px;
+    }
+    
+    .value-icon {
+        font-size: 2rem;
+    }
+    
+    .value-text {
+        font-size: 1.5rem;
+    }
+    
+    /* Demo Section */
+    .demo-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .header-left,
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .scenario-title {
+        font-size: 1.25rem;
+    }
+    
+    /* Phase Navigation */
+    .phase-navigation {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: var(--spacing-md);
+    }
+    
+    .phase-nav-item {
+        min-width: 80px;
+        padding: var(--spacing-sm);
+    }
+    
+    .phase-nav-icon {
+        font-size: 1.5rem;
+    }
+    
+    .phase-nav-name {
+        font-size: 0.85rem;
+    }
+    
+    .phase-connector {
+        width: 30px;
+    }
+    
+    /* Split Screen */
+    .split-screen {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .panel-content {
+        max-height: 400px;
+    }
+    
+    /* Metrics */
+    .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Completion */
+    .completion-icon {
+        font-size: 4rem;
+    }
+    
+    .completion-title {
+        font-size: 2.5rem;
+    }
+    
+    .final-metrics {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .final-metric {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   Mobile Landscape (576px to 767px)
+   ============================================ */
+@media (max-width: 767px) {
+    /* Base */
+    html {
+        font-size: 14px;
+    }
+    
+    /* Typography */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    /* Landing Section */
+    .bob-avatar {
+        width: 100px;
+        height: 100px;
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .robot-antenna {
+        height: 15px;
+    }
+    
+    .robot-eyes {
+        padding: 30px 20px 0;
+    }
+    
+    .eye {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .pupil {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .robot-mouth {
+        width: 40px;
+        height: 15px;
+        bottom: 20px;
+    }
+    
+    .value-prop {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .value-item {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .scenario-selector {
+        max-width: 100%;
+    }
+    
+    .cta-button {
+        padding: var(--spacing-md) var(--spacing-xl);
+        font-size: 1.1rem;
+    }
+    
+    /* Demo Section */
+    .demo-section {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .demo-header {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .header-left {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+    }
+    
+    .header-right {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .playback-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .speed-control {
+        flex: 1;
+    }
+    
+    .speed-control select {
+        width: 100%;
+    }
+    
+    /* Progress */
+    .progress-container {
+        padding: 0 var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    /* Phase Navigation */
+    .phase-navigation {
+        padding: var(--spacing-sm);
+    }
+    
+    .phase-nav-item {
+        min-width: 70px;
+        padding: var(--spacing-xs);
+    }
+    
+    .phase-nav-icon {
+        font-size: 1.25rem;
+    }
+    
+    .phase-nav-name {
+        font-size: 0.75rem;
+    }
+    
+    .phase-nav-time {
+        font-size: 0.7rem;
+    }
+    
+    .phase-connector {
+        width: 20px;
+        margin: 0 var(--spacing-xs);
+    }
+    
+    /* Split Screen */
+    .split-screen {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .panel-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .panel-content {
+        padding: var(--spacing-md);
+        max-height: 300px;
+    }
+    
+    /* Code Editor */
+    .code-editor {
+        font-size: 0.8rem;
+        max-height: 200px;
+    }
+    
+    /* Terminal */
+    .terminal-content {
+        font-size: 0.8rem;
+        max-height: 150px;
+    }
+    
+    /* Metrics */
+    .metrics-dashboard {
+        padding: var(--spacing-md);
+        margin: 0 var(--spacing-md) var(--spacing-md);
+    }
+    
+    .metrics-title {
+        font-size: 1.25rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .metric-card {
+        padding: var(--spacing-md);
+    }
+    
+    .metric-icon {
+        font-size: 1.5rem;
+    }
+    
+    .metric-value {
+        font-size: 1.5rem;
+    }
+    
+    .metric-label {
+        font-size: 0.75rem;
+    }
+    
+    /* Completion */
+    .completion-icon {
+        font-size: 3rem;
+    }
+    
+    .completion-title {
+        font-size: 2rem;
+    }
+    
+    .completion-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .completion-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .share-message {
+        padding: var(--spacing-md);
+    }
+    
+    .share-textarea {
+        min-height: 150px;
+        font-size: 0.85rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: var(--spacing-md);
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* ============================================
+   Mobile Portrait (up to 575px)
+   ============================================ */
+@media (max-width: 575px) {
+    /* Base */
+    html {
+        font-size: 13px;
+    }
+    
+    /* Typography */
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    
+    .main-title {
+        font-size: 1.75rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Landing */
+    .bob-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .value-icon {
+        font-size: 1.75rem;
+    }
+    
+    .value-text {
+        font-size: 1.25rem;
+    }
+    
+    .cta-button {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 1rem;
+    }
+    
+    .btn-icon {
+        font-size: 1.25rem;
+    }
+    
+    /* Demo */
+    .scenario-title {
+        font-size: 1.1rem;
+    }
+    
+    .phase-nav-item {
+        min-width: 60px;
+    }
+    
+    .phase-nav-icon {
+        font-size: 1.1rem;
+    }
+    
+    .phase-nav-name {
+        font-size: 0.7rem;
+    }
+    
+    .phase-nav-time {
+        display: none;
+    }
+    
+    /* Panels */
+    .panel-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .panel-header h3 {
+        font-size: 1rem;
+    }
+    
+    .panel-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .mode-indicator {
+        padding: var(--spacing-sm);
+    }
+    
+    .mode-icon {
+        font-size: 1.25rem;
+    }
+    
+    .reasoning-display h4,
+    .tools-tracker h4,
+    .next-steps h4 {
+        font-size: 0.9rem;
+    }
+    
+    /* Code Editor */
+    .editor-header,
+    .editor-footer {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.75rem;
+    }
+    
+    .code-editor {
+        padding: var(--spacing-sm);
+        font-size: 0.75rem;
+    }
+    
+    /* Terminal */
+    .terminal-header {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .terminal-content {
+        padding: var(--spacing-sm);
+        font-size: 0.75rem;
+    }
+    
+    /* Metrics */
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metric-card {
+        padding: var(--spacing-sm);
+    }
+    
+    /* Completion */
+    .completion-icon {
+        font-size: 2.5rem;
+    }
+    
+    .completion-title {
+        font-size: 1.75rem;
+    }
+    
+    .final-metric {
+        padding: var(--spacing-md);
+        min-width: auto;
+    }
+    
+    .final-metric-value {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   Small Mobile (up to 375px)
+   ============================================ */
+@media (max-width: 375px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .bob-avatar {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .value-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .cta-button {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .phase-nav-item {
+        min-width: 50px;
+        padding: var(--spacing-xs);
+    }
+    
+    .phase-nav-name {
+        font-size: 0.65rem;
+    }
+    
+    .metric-icon {
+        font-size: 1.25rem;
+    }
+    
+    .metric-value {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    
+    .demo-header,
+    .playback-controls,
+    .exit-btn,
+    .footer,
+    .cta-button,
+    .action-btn {
+        display: none !important;
+    }
+    
+    .split-screen {
+        grid-template-columns: 1fr;
+    }
+    
+    .panel-content {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   Accessibility - Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .bob-avatar,
+    .robot-antenna::after,
+    .eye,
+    .main-title .emoji {
+        animation: none !important;
+    }
+}
+
+/* ============================================
+   Dark Mode Support (if needed)
+   ============================================ */
+@media (prefers-color-scheme: light) {
+    /* Light mode overrides can be added here if needed */
+    /* Currently using dark theme by default */
+}
+
+/* ============================================
+   High Contrast Mode
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #ffffff;
+        --text-muted: #cccccc;
+    }
+    
+    .panel,
+    .metric-card,
+    .value-item {
+        border: 2px solid var(--border-color);
+    }
+}
+
+/* ============================================
+   Landscape Orientation
+   ============================================ */
+@media (orientation: landscape) and (max-height: 600px) {
+    section {
+        min-height: auto;
+    }
+    
+    .landing-section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .bob-avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .value-prop {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .panel-content {
+        max-height: 250px;
+    }
+}
+
+/* ============================================
+   Touch Device Optimizations
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .control-btn,
+    .exit-btn,
+    .action-btn,
+    .cta-button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects */
+    .value-item:hover,
+    .metric-card:hover,
+    .phase-nav-item:hover {
+        transform: none;
+    }
+    
+    /* Simplify animations */
+    .bob-avatar {
+        animation: none;
+    }
+}
+
+/* Made with Bob */
