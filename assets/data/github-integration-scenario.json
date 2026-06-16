@@ -1,0 +1,287 @@
+{
+  "id": "github-integration",
+  "title": "Add GitHub Issue Tracking",
+  "description": "Watch Bob add GitHub integration from scratch",
+  "difficulty": "medium",
+  "estimatedTime": 27,
+  "totalTime": 27,
+  "phases": [
+    {
+      "id": "planning",
+      "name": "Planning",
+      "icon": "🎯",
+      "mode": "plan",
+      "duration": 2,
+      "thinking": [
+        "Analyzing requirements...",
+        "Breaking down the task into steps...",
+        "Identifying dependencies...",
+        "Planning the architecture..."
+      ],
+      "tools": [
+        {
+          "name": "list_files",
+          "description": "Analyzing current codebase structure",
+          "status": "completed"
+        },
+        {
+          "name": "search_files",
+          "description": "Finding existing patterns",
+          "status": "completed"
+        },
+        {
+          "name": "read_file",
+          "description": "Reading configuration files",
+          "status": "completed"
+        }
+      ],
+      "nextSteps": [
+        "Research GitHub API best practices",
+        "Design the integration architecture",
+        "Plan the implementation approach"
+      ],
+      "output": {
+        "type": "markdown",
+        "filename": "implementation-plan.md",
+        "content": "# GitHub Integration Implementation Plan\n\n## Overview\nAdding GitHub issue tracking integration to the dashboard.\n\n## Requirements\n- Fetch issues from GitHub API\n- Display issues in dashboard\n- Real-time updates\n- Error handling\n\n## Architecture\n- API service layer\n- State management\n- UI components\n- WebSocket for real-time updates\n\n## Implementation Steps\n1. Set up GitHub API authentication\n2. Create API service\n3. Build UI components\n4. Implement state management\n5. Add error handling\n6. Write tests\n7. Deploy"
+      }
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "icon": "🔍",
+      "mode": "advanced",
+      "duration": 3,
+      "thinking": [
+        "Checking GitHub API documentation...",
+        "Reviewing best practices...",
+        "Analyzing similar implementations...",
+        "Gathering security requirements..."
+      ],
+      "tools": [
+        {
+          "name": "fetch_github_issue",
+          "description": "Analyzing similar features",
+          "status": "completed"
+        },
+        {
+          "name": "use_mcp_tool",
+          "description": "Querying watsonx docs",
+          "status": "completed"
+        },
+        {
+          "name": "search_files",
+          "description": "Finding code patterns",
+          "status": "completed"
+        }
+      ],
+      "nextSteps": [
+        "Start implementing the API service",
+        "Set up authentication",
+        "Create data models"
+      ],
+      "output": {
+        "type": "markdown",
+        "filename": "research-findings.md",
+        "content": "# Research Findings\n\n## GitHub API\n- REST API v3\n- Rate limiting: 5000 requests/hour\n- Authentication: OAuth or Personal Access Token\n\n## Best Practices\n- Use caching to reduce API calls\n- Implement exponential backoff\n- Handle rate limiting gracefully\n\n## Security\n- Store tokens securely\n- Use environment variables\n- Implement CORS properly"
+      }
+    },
+    {
+      "id": "coding",
+      "name": "Coding",
+      "icon": "💻",
+      "mode": "code",
+      "duration": 8,
+      "thinking": [
+        "Implementing GitHub API integration...",
+        "Creating service layer...",
+        "Building UI components...",
+        "Adding error handling..."
+      ],
+      "tools": [
+        {
+          "name": "write_to_file",
+          "description": "Creating new files",
+          "status": "completed"
+        },
+        {
+          "name": "apply_diff",
+          "description": "Modifying existing code",
+          "status": "completed"
+        },
+        {
+          "name": "insert_content",
+          "description": "Adding new functionality",
+          "status": "completed"
+        }
+      ],
+      "nextSteps": [
+        "Review the code",
+        "Run tests",
+        "Check for security issues"
+      ],
+      "output": {
+        "type": "code",
+        "filename": "github-service.ts",
+        "language": "typescript",
+        "content": "import { Octokit } from '@octokit/rest';\n\nexport class GitHubService {\n  private octokit: Octokit;\n\n  constructor(token: string) {\n    this.octokit = new Octokit({ auth: token });\n  }\n\n  async getIssues(owner: string, repo: string) {\n    try {\n      const { data } = await this.octokit.issues.listForRepo({\n        owner,\n        repo,\n        state: 'open',\n        per_page: 100\n      });\n      return data;\n    } catch (error) {\n      console.error('Failed to fetch issues:', error);\n      throw error;\n    }\n  }\n\n  async getIssue(owner: string, repo: string, issueNumber: number) {\n    const { data } = await this.octokit.issues.get({\n      owner,\n      repo,\n      issue_number: issueNumber\n    });\n    return data;\n  }\n}"
+      },
+      "filesModified": 12,
+      "linesAdded": 847
+    },
+    {
+      "id": "review",
+      "name": "Review",
+      "icon": "🔍",
+      "mode": "advanced",
+      "duration": 4,
+      "thinking": [
+        "Reviewing code quality...",
+        "Checking for security issues...",
+        "Validating performance...",
+        "Ensuring best practices..."
+      ],
+      "tools": [
+        {
+          "name": "obtain_git_diff",
+          "description": "Reviewing all changes",
+          "status": "completed"
+        },
+        {
+          "name": "search_files",
+          "description": "Checking for issues",
+          "status": "completed"
+        }
+      ],
+      "nextSteps": [
+        "Fix identified issues",
+        "Write comprehensive tests",
+        "Update documentation"
+      ],
+      "output": {
+        "type": "markdown",
+        "filename": "review-report.md",
+        "content": "# Code Review Report\n\n## Summary\n✅ Code quality: Excellent\n✅ Security: No issues found\n✅ Performance: Optimized\n⚠️  Test coverage: Needs improvement\n\n## Issues Found\n1. Missing error handling in webhook endpoint\n2. Rate limiting not implemented\n3. Missing input validation\n\n## Recommendations\n- Add comprehensive error handling\n- Implement rate limiting\n- Add input validation\n- Increase test coverage to 95%"
+      },
+      "issuesFound": 3,
+      "issuesFixed": 3
+    },
+    {
+      "id": "testing",
+      "name": "Testing",
+      "icon": "🧪",
+      "mode": "code",
+      "duration": 5,
+      "thinking": [
+        "Writing unit tests...",
+        "Creating integration tests...",
+        "Running test suite...",
+        "Validating coverage..."
+      ],
+      "tools": [
+        {
+          "name": "write_to_file",
+          "description": "Creating test files",
+          "status": "completed"
+        },
+        {
+          "name": "execute_command",
+          "description": "Running tests",
+          "status": "completed"
+        }
+      ],
+      "nextSteps": [
+        "Deploy to staging",
+        "Run integration tests",
+        "Monitor performance"
+      ],
+      "output": {
+        "type": "terminal",
+        "content": "$ npm test\n\n✓ GitHubService.getIssues() - should fetch issues\n✓ GitHubService.getIssue() - should fetch single issue\n✓ GitHubService - should handle rate limiting\n✓ GitHubService - should handle errors\n✓ Integration: Dashboard displays issues\n✓ Integration: Real-time updates work\n\n36 tests passed\nCoverage: 95.2%\n\nAll tests passed! ✅"
+      },
+      "testsCreated": 36,
+      "testsPassed": 36,
+      "coverage": 95.2
+    },
+    {
+      "id": "deployment",
+      "name": "Deployment",
+      "icon": "🚀",
+      "mode": "advanced",
+      "duration": 3,
+      "thinking": [
+        "Configuring deployment...",
+        "Setting up CI/CD...",
+        "Validating staging environment...",
+        "Creating rollback plan..."
+      ],
+      "tools": [
+        {
+          "name": "write_to_file",
+          "description": "Creating deployment configs",
+          "status": "completed"
+        },
+        {
+          "name": "execute_command",
+          "description": "Running deployment",
+          "status": "completed"
+        }
+      ],
+      "nextSteps": [
+        "Monitor production",
+        "Create documentation",
+        "Update changelog"
+      ],
+      "output": {
+        "type": "terminal",
+        "content": "$ npm run deploy\n\n🚀 Deploying to staging...\n✓ Building application\n✓ Running tests\n✓ Uploading artifacts\n✓ Deploying to staging\n✓ Running smoke tests\n✓ Validating deployment\n\n✅ Deployment successful!\n\nStaging URL: https://staging.example.com\nDeployment time: 2m 34s"
+      }
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation",
+      "icon": "📚",
+      "mode": "plan",
+      "duration": 2,
+      "thinking": [
+        "Creating API documentation...",
+        "Writing user guide...",
+        "Updating README...",
+        "Generating changelog..."
+      ],
+      "tools": [
+        {
+          "name": "write_to_file",
+          "description": "Creating documentation",
+          "status": "completed"
+        },
+        {
+          "name": "generate_description_from_diff",
+          "description": "Generating PR description",
+          "status": "completed"
+        }
+      ],
+      "nextSteps": [
+        "Review documentation",
+        "Get team feedback",
+        "Merge to main"
+      ],
+      "output": {
+        "type": "markdown",
+        "filename": "API_DOCUMENTATION.md",
+        "content": "# GitHub Integration API Documentation\n\n## Overview\nThis API provides GitHub issue tracking integration.\n\n## Endpoints\n\n### GET /api/github/issues\nFetch all issues for a repository.\n\n**Parameters:**\n- `owner` (string): Repository owner\n- `repo` (string): Repository name\n\n**Response:**\n```json\n{\n  \"issues\": [...],\n  \"total\": 42\n}\n```\n\n### GET /api/github/issues/:id\nFetch a single issue.\n\n**Response:**\n```json\n{\n  \"id\": 123,\n  \"title\": \"Issue title\",\n  \"body\": \"Issue description\"\n}\n```"
+      }
+    }
+  ],
+  "metrics": {
+    "timeElapsed": 27,
+    "timeSaved": 573,
+    "efficiencyGain": 21.2,
+    "filesModified": 12,
+    "linesAdded": 847,
+    "testsCreated": 36,
+    "bugsPrevented": 3,
+    "toolsUsed": 8,
+    "modeSwitches": 6
+  }
+}
